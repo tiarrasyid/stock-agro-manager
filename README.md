@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚜 Stock Agro Manager
 
-## Getting Started
+**Stock Agro Manager** adalah aplikasi manajemen inventaris modern yang dirancang khusus untuk operasional peternakan dan pertanian. Aplikasi ini memungkinkan pelacakan stok secara real-time, visualisasi tren data, dan manajemen transaksi yang aman.
 
-First, run the development server:
+![Dashboard Preview](https://img.shields.io/badge/UI-Modern_Minimalist-indigo)
+![Tech Stack](https://img.shields.io/badge/Tech-Next.js_|_PostgreSQL-blue)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Fitur Utama
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* **Dashboard Interaktif**: Ringkasan saldo stok otomatis untuk setiap item (Sapi, Pakan, Obat, dll).
+* **Visualisasi Data**: Grafik Area Chart yang modern untuk memantau volume stok secara visual.
+* **Manajemen CRUD**: Input, Edit, dan Hapus transaksi pergerakan stok dengan mudah.
+* **Sistem Filter & Cari**: Pencarian transaksi secara instan berdasarkan keterangan atau jenis stok.
+* **Export Laporan PDF**: Cetak laporan transaksi profesional dalam format PDF hanya dengan satu klik.
+* **Responsive Design**: Tampilan optimal baik di desktop maupun perangkat mobile.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* **Frontend**: Next.js 15+, Tailwind CSS (Modern Slate & Indigo Theme)
+* **Backend**: Next.js API Routes (Serverless)
+* **Database**: PostgreSQL
+* **Visualization**: Chart.js & React-Chartjs-2
+* **Reporting**: jsPDF & jsPDF-AutoTable
 
-## Learn More
+## 🚀 Cara Menjalankan Proyek
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Persiapan Database
+Pastikan PostgreSQL sudah berjalan dan buat tabel-tabel berikut melalui DBeaver atau terminal SQL:
+- `gdc_stockagromovimiento` (Tabel Transaksi)
+- `gdc_stockagrotipomov` (Master Tipe Gerak)
+- `gdc_stockagrotipostock` (Master Jenis Stok)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 2. Konfigurasi Environment
+Buat file `.env.local` di root folder dan masukkan kredensial database kamu:
+```env
+DB_USER=postgres
+DB_HOST=localhost
+DB_NAME=postgres
+DB_PASSWORD=password_kamu
+DB_PORT=5432
